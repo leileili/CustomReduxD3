@@ -3,9 +3,21 @@ import TableView from './TableView'
 import {connect} from 'react-redux'
 import cm from '../common/CommunicationManager'
 import rs from '../common/RemoteServices'
+import MapD3View from './MapD3View'
 
 class _ContentContainer extends React.Component{
-
+	constructor() {
+		super()
+		this.state = {"currentView":""}
+		
+		cm.subscribe("houseData", function(action) {
+			this.setState(Object.assign({}, this.state, {"currentView":action.data.currentView}))
+		})
+	}
+	handleViewSelection(v) {
+		this.setState(Object.assign({}, this.state, {"currentView":v}))
+	}
+	
 	render() {
 		var data = [];
 		var list = this.props.houseData;
@@ -21,7 +33,10 @@ class _ContentContainer extends React.Component{
 		}
 		return (
 				<div>
-					<TableView data={data}/>
+					<div><span onClick={()=>{this.handleViewSelection("table")}}>Table View</span><span onClick={()=>{this.handleViewSelection("map")}}>Map View</span></div>
+					{this.state.currentView==="table" &&<TableView data={data}/>}
+					{this.state.currentView==="map" &&<MapD3View data={data}/>}
+					
 				</div>
 		)
 	}
@@ -34,7 +49,7 @@ const ContentContainer = connect(
 			    return {
 			    	houseData: store.CommonReducer.houseData,
 			    	filterData: store.CommonReducer.filterData
-
+			    	
 			    };
 			  }
 			)(_ContentContainer);

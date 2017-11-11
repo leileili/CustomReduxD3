@@ -19,8 +19,9 @@ class _NavigationContainer extends React.Component{
 
 	
 	handleClick(e){
-		cm.publish({"type":"/RemoteServices/getAll", "data":{"url":this.url}})
+		cm.publish({"type":"/RemoteServices/getAll", "data":{"url":this.url, "currentView":"map"}})
 	}
+
 	
 	handleChange(e){
 		cm.dispatch({"type":"filterData","data":this.refs.filter.value})
