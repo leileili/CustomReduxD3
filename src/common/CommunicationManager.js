@@ -64,7 +64,7 @@ class CommunicationManager{
 			 console.log("Publish:"+topic.name);
 			 for (var t in topic.subMap) {
 				 var sub = topic.subMap[t];
-				 sub.run(action.data);
+				 sub.run(action);
 			 }
 	}
 	

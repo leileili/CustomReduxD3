@@ -1,11 +1,11 @@
 
-const CommonReducer = (state = {"houseData":[], "filterData":""}, action) => {
+const CommonReducer = (state = {"annotatedData":[], "filterData":""}, action) => {
  switch (action.type) {	
   	case '_common_':
   		return state
-	case 'houseData':
+	case 'annotatedData':
 	    return Object.assign({}, state, {
-	    	houseData: action.data
+	    	annotatedData: action.data
 	    })
 	case 'filterData':
 	    return Object.assign({}, state, {

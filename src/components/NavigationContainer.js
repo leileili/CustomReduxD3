@@ -8,18 +8,16 @@ class _NavigationContainer extends React.Component{
 	constructor(){
 		super();
 		this.id = "NavigationContainer"
-		this.url = "http://73.71.159.185:8888/?url=http://coolshare.com/leili/projects/house.json";
-		//this.url = "./house.json";
-		//debugger
+		this.url = "http://73.71.159.185:8888/?url=http://coolshare.com/leili/projects/annotatedData.geojson";
 		this.state = {'enableFilter':false}
-		cm.subscribe("houseData", function(){
+		cm.subscribe("annotatedData", function(){
 			this.setState(Object.assign({}, this.state, {"enableFilter":true}))
 		},this); 
 	}
 
 	
 	handleClick(e){
-		cm.publish({"type":"/RemoteServices/getAll", "data":{"url":this.url, "currentView":"map"}})
+		cm.publish({"type":"/RemoteServices/getAll", "data":{"url":this.url, "options":{"currentView":"table"}}})
 	}
 
 	

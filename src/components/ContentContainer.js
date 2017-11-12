@@ -10,9 +10,9 @@ class _ContentContainer extends React.Component{
 		super()
 		this.state = {"currentView":""}
 		
-		cm.subscribe("houseData", function(action) {
-			this.setState(Object.assign({}, this.state, {"currentView":action.data.currentView}))
-		})
+		cm.subscribe("annotatedData", function(action) {
+			this.setState(Object.assign({}, this.state, {"currentView":action.options.currentView}))
+		},this);
 	}
 	handleViewSelection(v) {
 		this.setState(Object.assign({}, this.state, {"currentView":v}))
@@ -20,22 +20,25 @@ class _ContentContainer extends React.Component{
 	
 	render() {
 		var data = [];
-		var list = this.props.houseData;
+		var features = this.props.annotatedData;
 		var filter = this.props.filterData;
-		if (filter!=='') {
-			for (var i=0; i<list.length; i++) {
-				if (list[i].city.indexOf(filter)>-1) {
-					data.push(list[i])
-				}
+		var tableData = [];
+		var mapData = [];
+		for (var i=0; i<features.length; i++) {
+
+			var feature = features[i];
+			var name = feature.properties.label_name;
+			if (name.indexOf(filter)>-1 || filter==="") {
+				tableData.push(feature.properties)
+				mapData.push({"name":name, "geo":feature.geometry.coordinates[0]})
 			}
-		} else {
-			data = list
 		}
+
 		return (
 				<div>
-					<div><span onClick={()=>{this.handleViewSelection("table")}}>Table View</span><span onClick={()=>{this.handleViewSelection("map")}}>Map View</span></div>
-					{this.state.currentView==="table" &&<TableView data={data}/>}
-					{this.state.currentView==="map" &&<MapD3View data={data}/>}
+					<div><span style={{"marginRight":"50px", "color":"blue", "cursor":"pointer"}} onClick={()=>{this.handleViewSelection("table")}}>Table View</span><span style={{"color":"blue", "cursor":"pointer"}} onClick={()=>{this.handleViewSelection("map")}}>Map View</span></div>
+					{this.state.currentView==="table" &&<TableView data={tableData}/>}
+					{this.state.currentView==="map" &&<MapD3View data={mapData}/>}
 					
 				</div>
 		)
@@ -47,7 +50,7 @@ class _ContentContainer extends React.Component{
 const ContentContainer = connect(
 		  store => {
 			    return {
-			    	houseData: store.CommonReducer.houseData,
+			    	annotatedData: store.CommonReducer.annotatedData,
 			    	filterData: store.CommonReducer.filterData
 			    	
 			    };
