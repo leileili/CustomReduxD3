@@ -19,8 +19,6 @@ class _ContentContainer extends React.Component{
 		this.setState(Object.assign({}, this.state, {"currentView":v}))
 	}
 	componentDidMount() {
-		
-		debugger
 		cm.publish({"type":"/RemoteServices/getAll", "data":{"url":this.url, "options":{"currentView":"map"}}})
 	}
 	
