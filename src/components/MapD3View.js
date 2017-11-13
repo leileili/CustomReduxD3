@@ -10,7 +10,11 @@ export default class MapD3View extends Component {
 		this.infowindow = new google.maps.InfoWindow({
 			  size: new google.maps.Size(150, 50)
 			});
-
+		this.state = {"dirty":false};
+		this.id = "MapD3View"
+		cm.subscribe("/MapD3View/refresh", function() {
+			this.setState(Object.assign({}, this.state, {"dirty":!this.dirty}))
+		}, this)
 	}
 	
 	processData(projection) {
@@ -80,10 +84,11 @@ export default class MapD3View extends Component {
 		c._groups[0][0].setAttribute(key,  value);
 		c._groups[0][0].style[key] =  value;
 	}
-	
+
 	componentDidUpdate() {
 		this.updateMap()
 	}
+	
 	updateMap() {
 		var self = this;
 		

@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import cm from '../common/CommunicationManager'
 import rs from '../common/RemoteServices'
 import MapD3View from './MapD3View'
+import '../common/common.css'
 
 class _ContentContainer extends React.Component{
 	constructor() {
@@ -17,6 +18,11 @@ class _ContentContainer extends React.Component{
 	}
 	handleViewSelection(v) {
 		this.setState(Object.assign({}, this.state, {"currentView":v}))
+		
+		setTimeout(function() {
+			cm.publish({"type":"/MapD3View/refresh"})
+		})
+		
 	}
 	componentDidMount() {
 		cm.publish({"type":"/RemoteServices/getAll", "data":{"url":this.url, "options":{"currentView":"map"}}})
@@ -40,7 +46,7 @@ class _ContentContainer extends React.Component{
 
 		return (
 				<div>
-					<div><span style={{"marginRight":"50px", "color":"blue", "cursor":"pointer"}} onClick={()=>{this.handleViewSelection("table")}}>Table View</span><span style={{"color":"blue", "cursor":"pointer"}} onClick={()=>{this.handleViewSelection("map")}}>Map View</span></div>
+					<div className={this.state.currentView==="table"?"selectedTab":"unselectedTab"} ><span style={{"marginRight":"50px", "color":"blue", "cursor":"pointer"}} className={this.state.currentView==="table"?"selectedTab":"unselectedTab"} onClick={()=>{this.handleViewSelection("table")}}>Table View</span><span style={{"color":"blue", "cursor":"pointer"}} className={this.state.currentView==="map"?"selectedTab":"unselectedTab"} onClick={()=>{this.handleViewSelection("map")}}>Map View</span></div>
 					{this.state.currentView==="table" &&<TableView data={tableData}/>}
 					{this.state.currentView==="map" &&<MapD3View data={mapData} featureData={tableData}/>}
 					
