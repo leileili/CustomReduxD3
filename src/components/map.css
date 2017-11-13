@@ -21,4 +21,11 @@ html, body, #map {
   stroke: black;
   stroke-width: 1.5px;
 }
-
+#marker-tooltip {
+    display: none;
+    position:absolute;
+    width: 200px;
+    height: 30px;
+    background-color: #F2F5A9;
+    padding:5px
+}

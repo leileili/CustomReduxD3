@@ -8,17 +8,17 @@ class _NavigationContainer extends React.Component{
 	constructor(){
 		super();
 		this.id = "NavigationContainer"
-		this.url = "http://73.71.159.185:8888/?url=http://coolshare.com/leili/projects/annotatedData.geojson";
 		this.state = {'enableFilter':false}
+		
 		cm.subscribe("annotatedData", function(){
 			this.setState(Object.assign({}, this.state, {"enableFilter":true}))
 		},this); 
 	}
 
 	
-	handleClick(e){
-		cm.publish({"type":"/RemoteServices/getAll", "data":{"url":this.url, "options":{"currentView":"table"}}})
-	}
+	//handleClick(e){
+	//	cm.publish({"type":"/RemoteServices/getAll", "data":{"url":this.url, "options":{"currentView":"map"}}})
+	//}
 
 	
 	handleChange(e){
@@ -30,8 +30,6 @@ class _NavigationContainer extends React.Component{
 	render() {
 		return (
 				<div style={{"height":"100px"}}>
-					<p>Please click the button to get the house data:</p>
-					<button onClick={(e)=>{this.handleClick(e)}} style={{"width":"150px", "display":"block"}}>Get House Data</button>
 					<input ref="filter" placeholder="Filter name" disabled={!this.state.enableFilter} onChange={(e)=>{this.handleChange(e)}}/>
 				</div>
 		)
