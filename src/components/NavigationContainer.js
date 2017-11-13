@@ -32,7 +32,7 @@ class _NavigationContainer extends React.Component{
 				<div style={{"height":"100px"}}>
 					<p>Please click the button to get the house data:</p>
 					<button onClick={(e)=>{this.handleClick(e)}} style={{"width":"150px", "display":"block"}}>Get House Data</button>
-					<input ref="filter" placeholder="Filter City" disabled={!this.state.enableFilter} onChange={(e)=>{this.handleChange(e)}}/>
+					<input ref="filter" placeholder="Filter name" disabled={!this.state.enableFilter} onChange={(e)=>{this.handleChange(e)}}/>
 				</div>
 		)
 	}

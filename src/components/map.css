@@ -10,8 +10,8 @@ html, body, #map {
 }
 
 .stations svg {
-  width: 60px;
-  height: 20px;
+  width: 500px;
+  height: 500px;
   padding-right: 100px;
   font: 10px sans-serif;
 }
@@ -22,12 +22,3 @@ html, body, #map {
   stroke-width: 1.5px;
 }
 
-.stations2 svg {
-  width: 322px;
-  height: 322px;
-  padding-right: 100px;
-  font: 10px sans-serif;
-}
-.stations2, .stations2 svg {
-  position: absolute;
-}		
