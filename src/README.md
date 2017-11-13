@@ -1,5 +1,7 @@
 ***How to extend Redux with pub/sub in real system ?***
+**Live Demo:**
 
+<a href="https://leileili.github.io/CustomReduxD3/">Redux project with Google Map and D3</a>
 <p>
 <b>Problem 1:</b>	
 In a web application systems where components need to communicate to each other,if we use React Redux , the standard approach is using Redux store subscription. The subscription will be sent to all the subscribers and in a real world web application, it might mean more than hundreds or thousands components will receive the notification and for each component it needs to use getState() to check if this call is for it, but in the fact maybe there is only one component need to be notified. In this case the universal subscription approach will be a concern issue for performance. 
@@ -27,6 +29,4 @@ Here is the flow chart:
 ![Custom React Redux workflow](./Custom_React_Redux.png?raw=true "Custom React Redux workflow Picture")
 
 
-**Live Demo:**
 
-<a href="https://leileili.github.io/Custom_React_Redux/">Custom React Redux Demo</a>

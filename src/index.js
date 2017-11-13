@@ -25,7 +25,7 @@ render(
 			<Route path="about" component={About}/>
 			<Route path="test" component={Test}/>
 		</Route>
-		<Route path="/leili/CustomRedux/" component={App}>
+		<Route path="/leili/CustomReduxD3/" component={App}>
 		      <IndexRoute component={Home}/>
 		      <Route path="home" component={Home}/>
 		      <Route path="about" component={About}/>
