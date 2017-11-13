@@ -14,10 +14,8 @@ export default class Home extends React.Component {
       	<HeaderContainer/>
       	<Grid>
 			<Row>
-				<Col sm ={3} md={3}>
-					<NavigationContainer/>
-				</Col>
-				<Col sm ={9} md={9}>
+ 
+				<Col sm ={12} md={12}>
 					<ContentContainer/>
 				</Col>
 			</Row>
