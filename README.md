@@ -7,7 +7,7 @@
 
   <li>Architecture.<br/>
       This project used the Redux to handle to controlling and modeling working with React view.
-      The details is described in one of my other projects (<a href="https://github.com/leileili/Custom_React_Redux">A custom Redux Approach</a>). In this approach, I fixed some issues of Redux and improved the efficiency <br/>
+      The details is described in one of my other projects (<a href="https://github.com/leileili/Custom_React_Redux">A custom Redux Approach</a>). In this approach, I fixed some issues of Redux and improved the efficiency <br/><br/>
   <li>Major patterns used.<br/><br/>
     <b>1).</b> Highly componentized and isolated<br/>
        My application is highly componentized (See my other project, <a href="https://github.com/leileili/independentComponentlize">Highly componentized web application</a>, for details). My application is a container containing highly isolated "Objects" such as components for UI and services. These components and services never have references to each other. They only input by subscribe or connect (Redux) and only output by dispatch (Redux) or publish without any reference to any component or service.<br/><br/>
