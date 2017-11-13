@@ -21,15 +21,13 @@ render(
 	  <Router history={browserHistory }>	  	
 		<Route path='/' component={App}>
 			<IndexRoute component={Home} />
-			<Route path="home" component={Home}/>
+			<Route path="demo" component={Home}/>
 			<Route path="about" component={About}/>
-			<Route path="test" component={Test}/>
 		</Route>
 		<Route path="/leili/projects/CustomReduxD3/" component={App}>
 		      <IndexRoute component={Home}/>
-		      <Route path="home" component={Home}/>
+		      <Route path="demo" component={Home}/>
 		      <Route path="about" component={About}/>
-		      <Route path="test" component={Test}/>
 		    </Route>
 	</Router>
   </Provider>,

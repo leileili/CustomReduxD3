@@ -77,7 +77,7 @@ export default class MapD3View extends Component {
 	}
 	
 	rectContains (x, y, rect) {
-		console.log("x="+x+" y="+y+" rect="+JSON.stringify(rect))
+		//console.log("x="+x+" y="+y+" rect="+JSON.stringify(rect))
         return rect[0] <= x && x <= rect[0] + rect[2] && rect[1]<= y && y <= rect[1] + rect[3];
     }
 	setStyle = (c, key, value) => {
