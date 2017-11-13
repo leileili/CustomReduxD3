@@ -1,7 +1,7 @@
 ***The major approaches in this project***<br/><br/>
 **Live Demo:**
 
-<a href="http://coolshare.com/leili/CustomReduxD3/">Custom React Redux Demo</a>
+<a href="http://coolshare.com/leili/projects/CustomReduxD3/">A Redux project with D3 and GoogleMap</a>
 
 <p>
 
