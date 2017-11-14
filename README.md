@@ -17,4 +17,4 @@
 
 
 Here is the flow chart:
-![Redux D3 workflow](./flow.png?raw=true "Redux withD3 workflow Picture")
+![Redux D3 workflow](./src/flow.png?raw=true "Redux withD3 workflow Picture")
