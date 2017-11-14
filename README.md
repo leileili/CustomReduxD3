@@ -16,3 +16,5 @@
     Communication among components was so important and I liked to design a very easy way to let any component/service to communicate to others in a extreme loose way. Redux provides a subscription method but can not provide what I needed (see why in <a href="https://github.com/leileili/Custom_React_Redux">A custom Redux Approach</a>). This pattern (Publish/Subscribe) satisfies what I needed. I built my own Publish/Subscribe system: CommunicationManager, a singleton that can be access globally. This system seamlessly integrated with Redux so that all the dispatching of Redux can be subscribed so that a dispatch can now not only update the store but also notify any subscriber that can easily determent if the message is for it without checking the store changes.<br/><br/>
 
 
+Here is the flow chart:
+![Redux D3 workflow](./workflow.png?raw=true "Redux withD3 workflow Picture")
