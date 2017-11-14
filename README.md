@@ -19,7 +19,7 @@
 Here is the flow chart:
 ![Redux D3 workflow](./src/flow.png?raw=true "Redux withD3 workflow Picture")
 
-<li>To be improved/constructed</li><br/><br/>
+<li>To be improved/constructed</li><br/>
 1. svg for each annotatedData object is overlapped to each other. So I can not use the polygon to detect mousemove and click. In stead, I detect mousemove and click from GoogleMap and then loop through polygons to find out the target polygon. There should be a better way to detect the mouse event directly from D3 objects.<br/><br/>
 2. The boostrap table needs to have pagination and so on.<br/><br/>
 
