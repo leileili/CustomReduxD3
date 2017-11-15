@@ -17,20 +17,20 @@ create a single page, coherent representation of the data that users can use to 
 provided.
 
 Requirements:
-    Use at least two types of visualization, one of which must be geo-based
-    Use the D3.js library for at least one of the visualizations
-    Provide interactivity between visualizations as well as user interactivity points
-    Provide at least one interaction that allows users to limit/filter/search data
-    You may use any third-party libraries you see fit
-    Responsive design / mobile compatibility is optional
+    <li>Use at least two types of visualization, one of which must be geo-based</li>
+    <li>Use the D3.js library for at least one of the visualizations</li>
+    <li>Provide interactivity between visualizations as well as user interactivity points</li>
+    <li>Provide at least one interaction that allows users to limit/filter/search data</li>
+    <li>You may use any third-party libraries you see fit</li>
+    <li>Responsive design / mobile compatibility is optional</li>
 
 </pre>
 <br/>
 <h3>Design and major approaches in this project</h3>
-  <li>Architecture.<br/>
+  <li>Architecture.</li><br/>
       This project used the Redux to handle to controlling and modeling working with React view.
       The details is described in one of my other projects (<a href="https://github.com/leileili/Custom_React_Redux">A custom Redux Approach</a>). In this approach, I fixed some issues of Redux and improved the efficiency <br/><br/>
-  <li>Major patterns used.<br/><br/>
+  <li>Major patterns used.<li></br/><br/>
     <b>1).</b> Highly componentized and isolated<br/>
        My application is highly componentized (See my other project, <a href="https://github.com/leileili/independentComponentlize">Highly componentized web application</a>, for details). My application is a container containing highly isolated "Objects" such as components for UI and services. These components and services never have references to each other. They only input by subscribe or connect (Redux) and only output by dispatch (Redux) or publish without any reference to any component or service.<br/><br/>
       <b>2).</b> <a href="http://www.thegreatcodeadventure.com/the-react-plus-redux-container-pattern/">Container Pattern</a>. A typical usage of this pattern is my ContentContainer class. ContentContainer contains two views: TableView and MapD3View. ContentContainer handles all the data flow (mostly incomming), process (filter) and passes the filtered data to views. Views (TableView and MapD3View), as Presentational Components, are stateless and only accept data from properties passed from container (ContentContainer). This pattern will make my life much easier such as testing the views.<br/><br/>
