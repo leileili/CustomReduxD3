@@ -42,7 +42,7 @@ Requirements:
 Here is the flow chart about how the data is requested:
 ![Redux D3 workflow](./src/flow.png?raw=true "Redux withD3 workflow Picture")
 <h4>The key points:</4>
-<li>The Components and Services are highly isolated. For example, in the flow above, when RemoteService receives data from remote server it has no idea about who will use the data - simply dispatch the response data to a given "type" and then the change of "type" (annotatedData) causes the views to be updated automatically!</li>
+<b>1).</b>The Components and Services are highly isolated. For example, in the flow above, when RemoteService receives data from remote server it has no idea about who will use the data - simply dispatch the response data to a given "type" and then the change of "type" (annotatedData) causes the views to be updated automatically!<br/><br/>
 
 
 <li>To be improved/constructed</li><br/>
