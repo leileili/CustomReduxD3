@@ -7,10 +7,17 @@
 <h3>Assignment:</h3>
 <pre>
 
-The intent for this project is to demonstrate your thought process in solution development as well as coding style and practices. Please provide a short document (paragraph or a few) indicating what your thought process was, what you did and didn't do (things you might add/improve on if you had all the time in the world), things you see as potential issues with what you implemented... as well as the solution itself. Please also try to provide a rough estimate of how much time you spent on the project.
+The intent for this project is to demonstrate your thought process in solution development as well as coding style and practices.
+Please provide a short document (paragraph or a few) indicating what your thought process was, what you did and didn't do (things you 
+might add/improve on if you had all the time in the world), things you see as potential issues with what you implemented... as well as 
+the solution itself. Please also try to provide a rough estimate of how much time you spent on the project.
 
-Attached is a geojson file. You may reformat/adjust this file as you see fit for the purposes of this project. This file represents impaired crashes by neighborhood in the Washington, D.C. area over a five year period (2010-2014). Please use the data in this file to create a single page, coherent representation of the data that users can use to understand various angles/depth of the information provided.
+Attached is a geojson file. You may reformat/adjust this file as you see fit for the purposes of this project. This file represents 
+impaired crashes by neighborhood in the Washington, D.C. area over a five year period (2010-2014). Please use the data in this file to 
+create a single page, coherent representation of the data that users can use to understand various angles/depth of the information 
+provided.
 
+Requirements:
     Use at least two types of visualization, one of which must be geo-based
     Use the D3.js library for at least one of the visualizations
     Provide interactivity between visualizations as well as user interactivity points
@@ -20,6 +27,7 @@ Attached is a geojson file. You may reformat/adjust this file as you see fit for
 
 </pre>
 <br/>
+<h3>Design and Implementation</h3>
   <li>Architecture.<br/>
       This project used the Redux to handle to controlling and modeling working with React view.
       The details is described in one of my other projects (<a href="https://github.com/leileili/Custom_React_Redux">A custom Redux Approach</a>). In this approach, I fixed some issues of Redux and improved the efficiency <br/><br/>
