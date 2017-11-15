@@ -11,7 +11,7 @@ Please provide a short document (paragraph or a few) indicating what your though
 might add/improve on if you had all the time in the world), things you see as potential issues with what you implemented... as well as 
 the solution itself. Please also try to provide a rough estimate of how much time you spent on the project.
 
-Attached is a geojson file. You may reformat/adjust this file as you see fit for the purposes of this project. This file represents 
+Attached is <a href="http://coolshare.com/leili/projects/annotatedData.geojson">a geojson file</a>. You may reformat/adjust this file as you see fit for the purposes of this project. This file represents 
 impaired crashes by neighborhood in the Washington, D.C. area over a five year period (2010-2014). Please use the data in this file to 
 create a single page, coherent representation of the data that users can use to understand various angles/depth of the information 
 provided.
