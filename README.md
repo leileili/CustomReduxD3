@@ -42,10 +42,11 @@ Requirements:
 Here is the flow chart about how the data is requested:
 ![Redux D3 workflow](./src/flow.png?raw=true "Redux withD3 workflow Picture")
 <h4>The key points:</h4>
-<b>1).</b>The Components and Services are highly isolated. For example, in the flow above, when RemoteService receives data from remote server it has no idea about who will use the data - simply dispatch the response data to a given "type" and then the change of "type" (annotatedData) causes the views to be updated automatically!<br/><br/>
+<b>a).</b>The Components and Services are highly isolated. For example, in the flow above, when RemoteService receives data from remote server (4) it has no idea about who will use the data - simply dispatch the response data to a given "type" in the Redux store (5) and then the change of "type" (annotatedData) causes the views to be updated (7) automatically!<br/><br/>
+<b>b).</b>The Components and Services are highly isolated. For example, in the flow above, when RemoteService receives data from remote server (4) it has no idea about who will use the data - simply dispatch the response data to a given "type" in the Redux store (5) and then the change of "type" (annotatedData) causes the views to be updated (7) automatically!<br/><br/>
 
 
-<li>To be improved/constructed</li><br/>
+<h4>To be improved/constructed</h4>
 <b>1.</b> svg for each annotatedData object is overlapped to each other. So I can not use the polygon to detect mousemove and click. In stead, I detect mousemove and click from GoogleMap and then loop through polygons to find out the target polygon. There should be a better way to detect the mouse event directly from D3 objects.<br/><br/>
 <b>2.</b> The boostrap table needs to have pagination and so on.<br/><br/>
 
