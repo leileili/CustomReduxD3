@@ -1,4 +1,3 @@
-***The major approaches in this project***<br/><br/>
 **Live Demo:**
 
 <a href="http://coolshare.com/leili/projects/CustomReduxD3/">A Redux project with D3 and GoogleMap</a>
@@ -27,7 +26,7 @@ Requirements:
 
 </pre>
 <br/>
-<h3>Design and Implementation</h3>
+<h3>Design and major approaches in this project</h3>
   <li>Architecture.<br/>
       This project used the Redux to handle to controlling and modeling working with React view.
       The details is described in one of my other projects (<a href="https://github.com/leileili/Custom_React_Redux">A custom Redux Approach</a>). In this approach, I fixed some issues of Redux and improved the efficiency <br/><br/>
