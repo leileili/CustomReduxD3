@@ -42,8 +42,9 @@ Requirements:
 Here is the flow chart about how the data is requested:
 ![Redux D3 workflow](./src/flow.png?raw=true "Redux withD3 workflow Picture")
 <h4>The key points:</h4>
-<b>a).</b>The Components and Services are highly isolated. For example, in the flow above, when RemoteService receives data from remote server (4) it has no idea about who will use the data - simply dispatch the response data to a given "type" in the Redux store (5) and then the change of "type" (annotatedData) causes the views to be updated (7) automatically!<br/><br/>
-<b>b).</b>The Components and Services are highly isolated. For example, in the flow above, when RemoteService receives data from remote server (4) it has no idea about who will use the data - simply dispatch the response data to a given "type" in the Redux store (5) and then the change of "type" (annotatedData) causes the views to be updated (7) automatically!<br/><br/>
+<b>a).</b>The Components and Services are highly isolated. For example, in the flow above, when RemoteService receives data from remote server (4) it has no idea about who will use the data - simply dispatch the response data to a given "type" in the Redux store (5). And ContentContainer also has no idea about who handle its request for data and who eventually update its views. Only thing ContentContainer knows are a topic/type ("/RemoteServices/getAll") to publish. This means that a service user (the component) never know who will serve it. <b>This is a higher level of isolation than dependency injection</b> in Angular since a service user (controller in AngularJS or component in Angular) has to specify concretely what service to be injected.
+
+<b>b).</b> There is no code to update the views! The change of "type" (annotatedData) in Redux store causes the views to be updated (7) automatically because of Redux Connect!<br/><br/>
 
 
 <h4>To be improved/constructed</h4>
