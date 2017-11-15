@@ -10,7 +10,7 @@ class _ContentContainer extends React.Component{
 	constructor() {
 		super()
 		this.state = {"currentView":"map","enableFilter":false}
-		this.url = "http://73.71.159.185:8888/?url=http://coolshare.com/leili/projects/annotatedData.geojson";
+		this.url = "http://coolshare.com/leili/projects/annotatedData.geojson";
 		
 		cm.subscribe("annotatedData", function(action) {
 			this.setState(Object.assign({}, this.state, {"currentView":action.options.currentView}))
