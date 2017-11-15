@@ -39,8 +39,11 @@ Requirements:
     Communication among components was so important and I liked to design a very easy way to let any component/service to communicate to others in a extreme loose way. Redux provides a subscription method but can not provide what I needed (see why in <a href="https://github.com/leileili/Custom_React_Redux">A custom Redux Approach</a>). This pattern (Publish/Subscribe) satisfies what I needed. I built my own Publish/Subscribe system: CommunicationManager, a singleton that can be access globally. This system seamlessly integrated with Redux so that all the dispatching of Redux can be subscribed so that a dispatch can now not only update the store but also notify any subscriber that can easily determent if the message is for it without checking the store changes.<br/><br/>
 
 
-Here is the flow chart:
+Here is the flow chart about how the data is requested:
 ![Redux D3 workflow](./src/flow.png?raw=true "Redux withD3 workflow Picture")
+<h4>The key points:</4>
+<li>The Components and Services are highly isolated. For example, in the flow above, when RemoteService receives data from remote server it has no idea about who will use the data - simply dispatch the response data to a given "type" and then the change of "type" (annotatedData) causes the views to be updated automatically!</li>
+
 
 <li>To be improved/constructed</li><br/>
 <b>1.</b> svg for each annotatedData object is overlapped to each other. So I can not use the polygon to detect mousemove and click. In stead, I detect mousemove and click from GoogleMap and then loop through polygons to find out the target polygon. There should be a better way to detect the mouse event directly from D3 objects.<br/><br/>
