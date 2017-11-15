@@ -17,13 +17,14 @@ create a single page, coherent representation of the data that users can use to 
 provided.
 
 Requirements:
+    <ul><ul>
     <li>Use at least two types of visualization, one of which must be geo-based</li>
     <li>Use the D3.js library for at least one of the visualizations</li>
     <li>Provide interactivity between visualizations as well as user interactivity points</li>
     <li>Provide at least one interaction that allows users to limit/filter/search data</li>
     <li>You may use any third-party libraries you see fit</li>
     <li>Responsive design / mobile compatibility is optional</li>
-
+    </ul></ul>
 </pre>
 <br/>
 <h3>Design and major approaches in this project</h3>
